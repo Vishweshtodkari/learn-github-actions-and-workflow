@@ -1,13 +1,14 @@
 name: first-workflow
+
 on: push
 
 jobs:
   first-job:
-    runs-on: Ubantu:latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: get-repo-code
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
 
       - name: validate html file
         run: test -f index.html
