@@ -12,3 +12,9 @@ jobs:
 
       - name: validate html file
         run: test -f index.html
+
+      - name: validate js file
+        run: test -f script.js
+
+      - name: validate code
+        run: code --check script.js
