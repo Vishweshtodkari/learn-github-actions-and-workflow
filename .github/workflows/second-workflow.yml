@@ -3,8 +3,7 @@ name: second-workflow
 on:
   workflow_run:
     workflows: [first-workflow]
-    types:
-      - completed
+    types: [completed]
 
 jobs:
   first-job:
