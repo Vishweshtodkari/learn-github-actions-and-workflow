@@ -7,14 +7,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: get-repo-code
-        uses: actions/checkout@v6
-
-      - name: validate html file
-        run: test -f index.html
-
-      - name: validate js file
-        run: test -f script.js
-
-      - name: validate code
-        run: node --check script.js
+      - name: welcome github action
+        run: echo "welocme in github action"

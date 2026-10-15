@@ -1,0 +1,23 @@
+name: first-workflow
+
+on:
+  workflow_run:
+    workflows: [first-workflow]
+    types: [completed]
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v6
+
+      - name: validate html file
+        run: test -f index.html
+
+      - name: validate js file
+        run: test -f script.js
+
+      - name: validate code
+        run: node --check script.js
