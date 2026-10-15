@@ -8,4 +8,4 @@ jobs:
 
     steps:
       - name: welcome github action
-        run: echo "welocme in github action"
+        run: echo "welocme in github action learning"
