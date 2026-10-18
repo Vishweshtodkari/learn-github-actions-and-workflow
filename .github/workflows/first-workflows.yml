@@ -7,5 +7,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: welcome github action
+      - name: welcome github actions
         run: echo "welocme in github action learning"

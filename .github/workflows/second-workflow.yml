@@ -6,7 +6,7 @@ on:
     types: [completed]
 
 jobs:
-  first-job:
+  validate-html-job:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,8 +16,27 @@ jobs:
       - name: validate html file
         run: test -f index.html
 
+  validate-js-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v6
+
       - name: validate js file
         run: test -f script.js
 
-      - name: validate code
+  validate-code:
+    needs: [validate-html-job, validate-js-job]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v6
+
+      - name: validate js code
         run: node --check script.js
+
+      - name: validate html code
+        run: npx htmlhint index.html
